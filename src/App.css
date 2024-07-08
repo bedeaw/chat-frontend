@@ -1,38 +1,234 @@
-.App {
-  text-align: center;
+:root {
+  --white: white;
+  --black: black;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.body {
+  background-color: #05010d;
+  height: 100vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navbar-logo-center-container {
+  z-index: 5;
+  background-color: rgba(0,0,0,0);
+  width: 1030px;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.navbar-logo-center-container.shadow-three {
+  width: 100%;
+  max-width: 1140px;
+}
+
+.container {
+  width: 100%;
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.navbar-wrapper-three {
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  display: flex;
+  position: relative;
 }
 
-.App-link {
-  color: #61dafb;
+.navbar-brand-three {
+  z-index: 5;
+  position: absolute;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.primary-navigation {
+  margin: 0 auto;
+  display: block;
+  padding: 120px 0 0 0;  
+  text-align: center;
+  font-size: 16px;
+  
+}
+
+.primary-navigation ul li {
+  list-style: none;
+  margin: 0 auto;
+  border-left: 2px solid #3ca0e7;
+  display: inline-block;
+  padding: 0 30px;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  font-family: Montserrat, sans-serif;
+}
+
+.primary-navigation li a {
+  color: #fff;
+}
+
+.primary-navigation li a:hover {
+  color: #3ca0e7;
+}
+
+.primary-navigation li:hover {
+  cursor: pointer;
+}
+
+.primary-navigation ul li ul {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  padding-left: 0;
+  left: 0;
+  display: none;
+  background: white;
+}
+
+.primary-navigation ul li:hover > ul,
+.primary-navigation ul li ul:hover {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+  min-width: 250px;
+  text-align: left;
+  padding-top: 20px;
+  box-shadow: 0px 3px 5px -1px #ccc;
+}
+
+.primary-navigation ul li ul li {
+  clear: both;
+  width: 100%;
+  text-align: left;
+  margin-bottom: 20px;
+  border-style: none;
+}
+
+.primary-navigation ul li ul li a:hover {
+  padding-left: 10px;
+  border-left: 2px solid #3ca0e7;
+  transition: all 0.3s ease;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: #3CA0E7;
+}
+
+ul li ul li a {
+  transition: all 0.5s ease;
+}
+
+.button-primary {
+  color: #fff;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background-color: #444e76;
+  padding: 12px 25px;
+  font-size: 12px;
+  line-height: 20px;
+  transition: all .2s;
+  font-family: Montserrat, sans-serif;
+}
+
+.button-primary:hover {
+  color:#fff;
+  background-color: #32343a;
+}
+
+.button-primary:active {
+  background-color: #43464d;
+}
+
+.section {
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  min-height: 400px;
+  max-height: 0;
+  display: flex;
+  overflow: visible;
+}
+
+.btn {
+  padding: 8px 20px;
+  width: 200px;
+  height: 50px;
+  color: #ffffff;
+  font-weight: 700;
+  border-radius: 0;
+  text-transform: uppercase;
+  margin: 25px;
+  overflow: hidden;
+  position: relative;
+  background-color: #05010d;
+  border-color: #00fffc;
+}
+
+.btn::before {
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, #00fffc, transparent);
+  transform: translateX(-100%);
+  transition: 0.6s;
+  position: absolute;
+}
+
+.btn:hover {
+  background: transparent;
+  box-shadow: 0 0 20px 5px #00fffc;
+}
+
+.btn:hover::before {
+  transform: translate(100%);
+}
+
+.heading {
+  color: #fff;
+}
+
+.primary-navigation ul li ul.dropdown {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  padding-left: 0;
+  left: 0;
+  display: none;
+  background-color: #05010d;
+  border: none;
+}
+
+.primary-navigation ul li:hover > ul.dropdown,
+.primary-navigation ul li ul.dropdown:hover {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+  min-width: 250px;
+  text-align: left;
+  padding-top: 20px;
+  box-shadow: none;
+  background-color: #05010d;
+}
+
+.primary-navigation ul li ul.dropdown li a {
+  clear: both;
+  width: 100%;
+  text-align: left;
+  margin-bottom: 20px;
+  border-style: none;
+  color: #3ca0e7;
+}
+
+.primary-navigation ul li ul.dropdown li a:hover {
+  padding-left: 10px;
+  border-left: 2px solid #3ca0e7;
+  color: #3ca0e7;
+  transition: all 0.3s ease;
 }
